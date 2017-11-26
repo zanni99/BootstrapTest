@@ -1866,11 +1866,11 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
+  color: #000000;
   background-color: #fff;
-  border-color: #80bdff;
+  border-color: #cecece;
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem #cecece;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2488,7 +2488,7 @@ fieldset[disabled] a.btn {
 
 .btn-light:hover {
   color: #111;
-  background-color: #e2e6ea;
+  background-color: #cecece;
   border-color: #dae0e5;
 }
 
@@ -3511,10 +3511,26 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
+  position: relative;
   padding: 0.5rem 1rem;
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:after {
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: #000000;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: .3s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.nav-link:focus, .nav-link:hover{
   text-decoration: none;
 }
 
